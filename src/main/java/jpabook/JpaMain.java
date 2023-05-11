@@ -1,11 +1,11 @@
-package hellojpa;
+package jpabook;
+
 
 import javax.persistence.EntityManager;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -18,19 +18,6 @@ public class JpaMain {
         tx.begin();
 
         try{
-
-            Team team = new Team();
-            team.setName("TeamA");
-            em.persist(team);
-
-            Member member = new Member();
-            member.setUsername("member1");
-            em.persist(member);
-
-            team.addMember(member);
-
-            em.flush();
-            em.clear();
 
             tx.commit(); // [트랜잭션] 커밋
         }catch (Exception e){
